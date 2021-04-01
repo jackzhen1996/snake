@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Snake</title>
+    <link rel='stylesheet' href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  </head>
+  <body>
+    <div id = 'container' data-x='20' data-y='20'>
+    <div id = 'title'>Snake</div>
+    <div id = 'forms'>
+      <form id = 'form1'>
+        <label>Player 1 <span class = 'p1Name'>Name</span></label>
+        <input id ='p1Input' required></input>
+        <button id = 'p1Submit' type = 'submit'>Add Player 1</button>
+      </form>
+
+      <form id = 'form2'>
+        <label>Player 2 <span class = 'p2Name'>Name</span></label>
+        <input id ='p2Input' required></input>
+        <button id = 'p2Submit' type = 'submit'>Add Player 2</button>
+      </form>
+    </div>
+    <div class='scores'>
+      <div id='scoreContainer'>
+        <div id ='p1' data-ready = 'false' data-direction='ArrowUp' data-position='{x:20,y:5}' data-score='0'> <span class='p1Name'>Player 1</span> : <span id ='p1Score'>0</span></div>
+        <div id ='p2' data-ready = 'false' data-direction='s' data-position='{x:20,y:15}' data-score='0'><span class='p2Name'>Player 2 </span> : <span id ='p2Score'>0</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./server/socket.js"></script>
+  </body>
+  <script type='module' src="./client/index.js"></script>
+  <script type='module' src="./client/components/board.js"></script>
+  <script type='module' src="./client/components/snake.js"></script>
+  <script type='module' src="./client/components/food.js"></script>
+</html>
