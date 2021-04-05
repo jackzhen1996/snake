@@ -12,6 +12,14 @@ body {
   margin:0;
 }
 
+#rule {
+  font-size: 20px;
+  text-align: center;
+  padding:10px;
+}
+
+
+
 #container {
   width: 60%;
   display: flex;
@@ -102,4 +110,15 @@ button:hover {
   font-size: 35px;
   padding: 10px;
   font-weight: 800;
+}
+
+#p1Name {
+  color: red;
+  font-weight: 700;
+}
+
+#p2Name {
+  color: blue;
+  font-weight: 700;
+
 }

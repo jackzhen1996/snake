@@ -135,7 +135,7 @@ const traverse = (player) => {
           renderSnake(currentX,currentY,p1color,(p1,p2)=>gotFood(p1,p2),'p1');
           renderSnake(currentX2,currentY2,p2color,(p1,p2)=>gotFood(p1,p2),'p2');
         }
-    }, 100);
+    }, 150);
 
 };
 
@@ -149,7 +149,7 @@ const cleanUp = () => {
     $(`#${p2moves[0].x}_${p2moves[0].y}`).css('background-color','');
     p2moves.splice(0,1);
 
-  }, 110)
+  }, 180)
 }
 
 $('#container').append(renderBoard());
