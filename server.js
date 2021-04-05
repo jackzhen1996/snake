@@ -9,6 +9,11 @@ app.use('/',express.static('./public'));
 let p1 = null;
 let p2 = null;
 
+const generateRandom = () => {
+  return [Math.floor(Math.random()*41),Math.floor(Math.random()*41)];
+};
+
+
 io.on('connection', socket => {
   // automatically assign player 1 and player 2
   if (!p1) {
@@ -52,6 +57,10 @@ io.on('connection', socket => {
 
     // listen for food location
     socket.on('foodAndScore', (data) => {
+      // randomize the food location here
+      const [x,y] = generateRandom();
+      data.x = x;
+      data.y = y;
       io.emit('foodAndScore',data);
     });
 

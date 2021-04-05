@@ -9,9 +9,6 @@ const renderFood = (x,y) => {
   $(`#${x+1}_${y}`).addClass('food');
 };
 
-const generateRandom = () => {
-  return [Math.floor(Math.random()*41),Math.floor(Math.random()*41)];
-};
 
 
-export {renderFood, generateRandom};
+export {renderFood};

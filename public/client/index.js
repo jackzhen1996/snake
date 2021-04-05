@@ -1,5 +1,5 @@
 import {renderSnake} from './components/snake.js';
-import {renderFood, generateRandom} from './components/food.js';
+import {renderFood} from './components/food.js';
 var socket = io();
 const height = 42;
 const width = 42;
@@ -54,11 +54,11 @@ const gotFood =(p1,p2) => {
   // randomize food location
   // broadcast food positions once eaten
   if (!ran) {
-    var [x,y] = generateRandom();
+    // var [x,y] = generateRandom();
     ran = true;
   }
   ran = false;
-  socket.emit('foodAndScore', {x,y, p1Score, p2Score});
+  socket.emit('foodAndScore', {p1Score, p2Score});
   socket.on('foodAndScore', function(data){
     $('#container').data('x', data.x);
     $('#container').data('y', data.y);
@@ -135,7 +135,7 @@ const traverse = (player) => {
           renderSnake(currentX,currentY,p1color,(p1,p2)=>gotFood(p1,p2),'p1');
           renderSnake(currentX2,currentY2,p2color,(p1,p2)=>gotFood(p1,p2),'p2');
         }
-    }, 150);
+    }, 100);
 
 };
 
@@ -149,7 +149,7 @@ const cleanUp = () => {
     $(`#${p2moves[0].x}_${p2moves[0].y}`).css('background-color','');
     p2moves.splice(0,1);
 
-  }, 180)
+  }, 120)
 }
 
 $('#container').append(renderBoard());
