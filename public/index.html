@@ -30,11 +30,15 @@
     </div>
     <div class='scores'>
       <div id='scoreContainer'>
-        <div id ='p1' data-ready = 'false' data-direction='ArrowUp' data-position='{x:20,y:5}' data-score='0'> <span id='p1Name'>Player 1</span> : <span id ='p1Score'>0</span></div>
-        <div id ='p2' data-ready = 'false' data-direction='s' data-position='{x:20,y:15}' data-score='0'><span id='p2Name'>Player 2 </span> : <span id ='p2Score'>0</span></div>
+        <div id ='p1' data-ready = 'false' data-direction='ArrowUp' data-position='{x:20,y:5}' data-score='0'> <span id='p1Name'>Player 1</span> : <span id ='p1Score'>0</span>
+        <div class='controls'>Controls: arrow keys </div>
+        </div>
+        <div id ='p2' data-ready = 'false' data-direction='s' data-position='{x:20,y:15}' data-score='0'><span id='p2Name'>Player 2 </span> : <span id ='p2Score'>0</span><br/>
+        <div class='controls'>Controls: w,a,s,d</div></div>
       </div>
     </div>
   </div>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="./server/socket.js"></script>
   </body>

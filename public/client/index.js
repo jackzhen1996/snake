@@ -93,7 +93,7 @@ const traverse = (player) => {
       if (currentX === 41 || currentY === 41 || currentX === 0 || currentY === 0 ||
         currentX2 === 41 || currentY2 === 41 || currentX2 === 0 || currentY2 === 0) {
         gameOver = true;
-        $('#scoreContainer').text('Game Over!');
+        $('#scoreContainer').text('Game Over! Refresh To Restart');
         p1moves = [];
         p2moves = [];
       }
